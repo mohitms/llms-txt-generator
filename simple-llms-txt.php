@@ -12,23 +12,22 @@
  * Domain Path:       /languages
  */
 
+namespace LLMSTxt;
+
 // If this file is called directly, abort.
 if ( ! defined( 'WPINC' ) ) {
 	die;
 }
 
-/**
- * Currently plugin version.
- * Start at version 1.0.0 and use SemVer - https://semver.org
- * Rename to simple-llms-txt later.
- */
-define( 'SIMPLE_LLMS_TXT_VERSION', '1.0.0' );
-
-namespace LLMSTxt;
-
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
+
+/**
+ * Currently plugin version.
+ * Start at version 1.0.0 and use SemVer - https://semver.org
+ */
+define( 'SIMPLE_LLMS_TXT_VERSION', '1.0.0' );
 
 /**
  * Simple Autoloader for namespaces.
