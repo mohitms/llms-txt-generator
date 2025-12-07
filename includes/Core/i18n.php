@@ -12,7 +12,7 @@ class i18n {
 	 */
 	public function load_plugin_textdomain() {
 		load_plugin_textdomain(
-			'llms-txt-generator',
+			'simple-llms-txt',
 			false,
 			dirname( dirname( dirname( plugin_basename( __FILE__ ) ) ) ) . '/languages/'
 		);

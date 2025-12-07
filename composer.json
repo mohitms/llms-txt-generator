@@ -1,6 +1,6 @@
 {
-    "name": "mohitms/llms-txt-generator",
-    "description": "LLMS.txt Generator and Manager for WordPress",
+    "name": "mohitms/simple-llms-txt",
+    "description": "Simple LLMS.txt Manager for WordPress",
     "type": "wordpress-plugin",
     "require-dev": {
         "php-stubs/wordpress-stubs": "^6.0"

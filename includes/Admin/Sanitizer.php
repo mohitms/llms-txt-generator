@@ -20,7 +20,7 @@ class Sanitizer {
 			add_settings_error( 
 				'llms_txt_content', 
 				'llms_txt_capability_error', 
-				__( 'You do not have permission to edit this setting.', 'llms-txt-generator' ) 
+				__( 'You do not have permission to edit this setting.', 'simple-llms-txt' ) 
 			);
 			return get_option( 'llms_txt_content' );
 		}

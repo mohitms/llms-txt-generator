@@ -1,15 +1,14 @@
-=== LLMS.txt Generator and Manager ===
-Contributors: yourname
-Donate link: https://yourdomain.com/donate
-Tags: llm, ai, txt, context, generator, seo, chatgpt, crawler
+=== Simple LLMS.txt ===
+Contributors: mohit
+Tags: llms, ai, context, txt
 Requires at least: 6.0
-Tested up to: 6.7
-Requires PHP: 7.4
+Tested up to: 6.4
 Stable tag: 1.0.0
+Requires PHP: 7.4
 License: GPLv2 or later
-License URI: https://www.gnu.org/licenses/gpl-2.0.html
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Empower AI agents to better understand your website by virtually serving a secure, standards-compliant llms.txt file directly from your dashboard.
+Simple LLMS.txt Manager for WordPress. Empower AI agents to better understand your website by virtually serving a secure, standards-compliant llms.txt file directly from your dashboard.
 
 == Description ==
 

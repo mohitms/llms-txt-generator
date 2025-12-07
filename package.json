@@ -1,7 +1,7 @@
 {
-    "name": "llms-txt-generator",
+    "name": "simple-llms-txt",
     "version": "1.0.0",
-    "description": "E2E Tests for LLMS.txt Generator",
+    "description": "Simple LLMS.txt Manager for WordPress",
     "scripts": {
         "test:e2e": "playwright test"
     },

@@ -53,8 +53,8 @@ class Settings {
 	 */
 	public function register_admin_page() {
 		add_options_page(
-			__( 'LLMS.txt Manager', 'llms-txt-generator' ),
-			__( 'LLMS.txt', 'llms-txt-generator' ),
+			__( 'LLMS.txt Manager', 'simple-llms-txt' ),
+			__( 'LLMS.txt', 'simple-llms-txt' ),
 			'manage_options',
 			'llms-txt-settings',
 			array( $this, 'render_admin_page' )
@@ -86,7 +86,7 @@ class Settings {
 		}
 		?>
 		<div class="wrap">
-			<h1><?php esc_html_e( 'LLMS.txt Generator', 'llms-txt-generator' ); ?></h1>
+			<h1><?php esc_html_e( 'LLMS.txt Generator', 'simple-llms-txt' ); ?></h1>
 			<form action="options.php" method="post">
 				<?php
 				settings_fields( 'llms_txt_group' );
@@ -97,7 +97,7 @@ class Settings {
 					<tbody>
 						<tr>
 							<th scope="row">
-								<label for="llms_txt_content"><?php esc_html_e( 'Content', 'llms-txt-generator' ); ?></label>
+								<label for="llms_txt_content"><?php esc_html_e( 'Content', 'simple-llms-txt' ); ?></label>
 							</th>
 							<td>
 								<textarea 
@@ -106,12 +106,12 @@ class Settings {
 									rows="15" 
 									cols="50" 
 									class="large-text code"
-									placeholder="<?php esc_attr_e( 'Add LLMS.txt instructions here...', 'llms-txt-generator' ); ?>"
+									placeholder="<?php esc_attr_e( 'Add LLMS.txt instructions here...', 'simple-llms-txt' ); ?>"
 								><?php echo esc_textarea( $content ); ?></textarea>
 								<p class="description">
-									<?php esc_html_e( 'Enter the raw text content for your llms.txt file. HTML tags will be automatically stripped.', 'llms-txt-generator' ); ?>
+									<?php esc_html_e( 'Enter the raw text content for your llms.txt file. HTML tags will be automatically stripped.', 'simple-llms-txt' ); ?>
 									<br>
-									<a href="<?php echo esc_url( home_url( '/llms.txt' ) ); ?>" target="_blank"><?php esc_html_e( 'View current llms.txt', 'llms-txt-generator' ); ?></a>
+									<a href="<?php echo esc_url( home_url( '/llms.txt' ) ); ?>" target="_blank"><?php esc_html_e( 'View current llms.txt', 'simple-llms-txt' ); ?></a>
 								</p>
 							</td>
 						</tr>
@@ -125,7 +125,7 @@ class Settings {
 				<p class="description" style="margin-top: 20px;">
 					<a href="<?php echo esc_url( $this->donate_url ); ?>" target="_blank" style="text-decoration: none; display: inline-flex; align-items: center; gap: 5px;">
 						<span class="dashicons dashicons-heart" style="color: #d63638;"></span>
-						<?php esc_html_e( 'Support the plugin', 'llms-txt-generator' ); ?>
+						<?php esc_html_e( 'Support the plugin', 'simple-llms-txt' ); ?>
 					</a>
 				</p>
 			<?php endif; ?>

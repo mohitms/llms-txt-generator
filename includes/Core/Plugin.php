@@ -32,7 +32,7 @@ class Plugin {
 	 * Define the core functionality of the plugin.
 	 */
 	public function __construct() {
-		$this->plugin_name = 'llms-txt-generator';
+		$this->plugin_name = 'simple-llms-txt';
 		$this->version     = '1.0.0';
 
 		$this->load_dependencies();

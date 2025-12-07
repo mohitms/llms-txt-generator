@@ -32,7 +32,7 @@ jobs:
     - name: Setup Configuration (Permalinks & Activation)
       run: |
         wp-env run cli wp rewrite structure '/%postname%/' --hard
-        wp-env run cli wp plugin activate llms-txt-generator
+        wp-env run cli wp plugin activate simple-llms-txt
         wp-env run cli wp rewrite flush --hard
 
     - name: Run Playwright tests
