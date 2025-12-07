@@ -34,8 +34,9 @@ jobs:
       run: vendor/bin/phpstan analyse --memory-limit=2G
 
     # PHPCS Check
-    - name: Register PHPCS Standards
-      run: vendor/bin/phpcs --config-set installed_paths vendor/wp-coding-standards/wpcs
+    # Plugin handles registration automatically via composer
+    # - name: Register PHPCS Standards
+    #   run: vendor/bin/phpcs --config-set installed_paths vendor/wp-coding-standards/wpcs
 
     - name: Run PHPCS
       run: vendor/bin/phpcs -v --standard=phpcs.xml.dist
