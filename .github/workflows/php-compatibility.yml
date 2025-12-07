@@ -1,0 +1,51 @@
+name: PHP Quality & Compatibility
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  php-compatibility:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        php-versions: ['7.4', '8.0', '8.1', '8.2', '8.3', '8.4']
+    name: PHP ${{ matrix.php-versions }} Test
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Setup PHP
+      uses: shivammathur/setup-php@v2
+      with:
+        php-version: ${{ matrix.php-versions }}
+        tools: composer
+
+    - name: Validate composer.json
+      run: composer validate --strict
+
+    - name: Install Dependencies
+      run: composer install --prefer-dist --no-progress
+
+    - name: Run PHPStan
+      run: vendor/bin/phpstan analyse
+
+  security-check:
+    runs-on: ubuntu-latest
+    name: Security Vulnerability Check
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Setup PHP
+      uses: shivammathur/setup-php@v2
+      with:
+        php-version: '8.0'
+        tools: composer
+
+    - name: Install Dependencies
+      run: composer install --prefer-dist --no-progress
+
+    # Using WPCS Security ruleset if configured, or basic PHPCS
+    - name: Check for Security Vulnerabilities (WPCS)
+      run: vendor/bin/phpcs --standard=WordPress-Extra --sniffs=WordPress.Security --ignore=vendor,node_modules .

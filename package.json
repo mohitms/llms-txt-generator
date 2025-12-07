@@ -1,0 +1,12 @@
+{
+    "name": "llms-txt-generator",
+    "version": "1.0.0",
+    "description": "E2E Tests for LLMS.txt Generator",
+    "scripts": {
+        "test:e2e": "playwright test"
+    },
+    "devDependencies": {
+        "@playwright/test": "^1.40.0",
+        "@wordpress/scripts": "^26.0.0"
+    }
+}

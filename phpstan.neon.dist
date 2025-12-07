@@ -1,0 +1,11 @@
+includes:
+    - vendor/szepeviktor/phpstan-wordpress/extension.neon
+
+parameters:
+    level: 5
+    inferPrivatePropertyTypeFromConstructor: true
+    paths:
+        - includes/
+        - llms-txt-generator.php
+    ignoreErrors:
+        - '#Constant [A-Z_]+ not found.#'
