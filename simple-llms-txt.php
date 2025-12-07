@@ -71,8 +71,8 @@ function deactivate_simple_llms_txt() {
 	LLMSTxt\Core\Deactivator::deactivate();
 }
 
-register_activation_hook( __FILE__, 'LLMSTxt\\activate_simple_llms_txt' );
-register_deactivation_hook( __FILE__, 'LLMSTxt\\deactivate_simple_llms_txt' );
+register_activation_hook( __FILE__, __NAMESPACE__ . '\\activate_simple_llms_txt' );
+register_deactivation_hook( __FILE__, __NAMESPACE__ . '\\deactivate_simple_llms_txt' );
 
 /**
  * Begins execution of the plugin.
