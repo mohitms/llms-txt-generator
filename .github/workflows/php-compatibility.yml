@@ -46,6 +46,9 @@ jobs:
     - name: Install Dependencies
       run: composer install --prefer-dist --no-progress
 
-    # Using WPCS Security ruleset if configured, or basic PHPCS
-    - name: Check for Security Vulnerabilities (WPCS)
-      run: vendor/bin/phpcs --standard=WordPress-Extra --sniffs=WordPress.Security --ignore=vendor,node_modules .
+    - name: Register PHPCS Standards
+      run: vendor/bin/phpcs --config-set installed_paths vendor/wp-coding-standards/wpcs
+
+    # Run PHPCS using the config file
+    - name: Check for Security Vulnerabilities & Coding Standards
+      run: vendor/bin/phpcs --standard=phpcs.xml.dist
