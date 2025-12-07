@@ -29,9 +29,9 @@ jobs:
     - name: Install Dependencies
       run: composer install --prefer-dist --no-progress
 
-    # PHPStan Check
-    - name: Run PHPStan
-      run: vendor/bin/phpstan analyse --memory-limit=2G
+    # PHPStan Check Removed per user request
+    # - name: Run PHPStan
+    #   run: vendor/bin/phpstan analyse --memory-limit=2G
 
     # PHPCS Check
     # Plugin handles registration automatically via composer

@@ -3,7 +3,6 @@
     "description": "LLMS.txt Generator and Manager for WordPress",
     "type": "wordpress-plugin",
     "require-dev": {
-        "phpstan/phpstan": "^1.10",
         "squizlabs/php_codesniffer": "^3.7",
         "wp-coding-standards/wpcs": "^3.0",
         "php-stubs/wordpress-stubs": "^6.0",
