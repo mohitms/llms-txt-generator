@@ -29,6 +29,13 @@ class Settings {
 	private $sanitizer;
 
 	/**
+	 * Donate URL.
+	 * 
+	 * @var string
+	 */
+	private $donate_url = 'https://buymeacoffee.com/yourname'; // Enter your donation URL here (e.g., https://buymeacoffee.com/yourname)
+
+	/**
 	 * Initialize the class and set its properties.
 	 *
 	 * @param string    $plugin_name The name of this plugin.
@@ -99,7 +106,7 @@ class Settings {
 									rows="15" 
 									cols="50" 
 									class="large-text code"
-									placeholder="<?php esc_attr_e( 'Enter your llms.txt content here...', 'llms-txt-generator' ); ?>"
+									placeholder="<?php esc_attr_e( 'Add LLMS.txt instructions here...', 'llms-txt-generator' ); ?>"
 								><?php echo esc_textarea( $content ); ?></textarea>
 								<p class="description">
 									<?php esc_html_e( 'Enter the raw text content for your llms.txt file. HTML tags will be automatically stripped.', 'llms-txt-generator' ); ?>
@@ -112,6 +119,16 @@ class Settings {
 				</table>
 				<?php submit_button(); ?>
 			</form>
+			
+			<?php if ( ! empty( $this->donate_url ) ) : ?>
+				<hr>
+				<p class="description" style="margin-top: 20px;">
+					<a href="<?php echo esc_url( $this->donate_url ); ?>" target="_blank" style="text-decoration: none; display: inline-flex; align-items: center; gap: 5px;">
+						<span class="dashicons dashicons-heart" style="color: #d63638;"></span>
+						<?php esc_html_e( 'Support the plugin', 'llms-txt-generator' ); ?>
+					</a>
+				</p>
+			<?php endif; ?>
 		</div>
 		<?php
 	}
