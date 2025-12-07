@@ -18,7 +18,7 @@ test('Plugin activation and basic content check', async ({ page }) => {
     const headers = response.headers();
     expect(headers['content-type']).toContain('text/plain');
 
-    const content = await page.body();
+    const content = await response.text();
     // Check for the default content we seeded
     expect(content.toString()).toContain('#');
 });
