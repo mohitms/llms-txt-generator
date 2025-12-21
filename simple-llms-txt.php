@@ -77,8 +77,19 @@ register_deactivation_hook( __FILE__, __NAMESPACE__ . '\\deactivate_simple_llms_
  * Begins execution of the plugin.
  */
 function run_simple_llms_txt() {
-	$plugin = new LLMSTxt\Core\Plugin();
-	$plugin->run();
+	if ( ! function_exists( 'add_action' ) ) {
+		return;
+	}
+
+	$plugin_class_path = plugin_dir_path( __FILE__ ) . 'includes/Core/Plugin.php';
+	if ( file_exists( $plugin_class_path ) ) {
+		require_once $plugin_class_path;
+	}
+
+	if ( class_exists( '\LLMSTxt\Core\Plugin' ) ) {
+		$plugin = new LLMSTxt\Core\Plugin();
+		$plugin->run();
+	}
 }
 
 run_simple_llms_txt();
