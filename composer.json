@@ -3,7 +3,9 @@
     "description": "Simple LLMS.txt Manager for WordPress",
     "type": "wordpress-plugin",
     "require-dev": {
-        "php-stubs/wordpress-stubs": "^6.0"
+        "brain/monkey": "^2.6",
+        "php-stubs/wordpress-stubs": "^6.0",
+        "phpunit/phpunit": "^9.6"
     },
     "license": "GPL-2.0-or-later",
     "authors": [
@@ -16,5 +18,8 @@
         "allow-plugins": {
             "dealerdirect/phpcodesniffer-composer-installer": true
         }
+    },
+    "scripts": {
+        "test": "php -d assert.exception=1 tests/unit/run.php"
     }
 }

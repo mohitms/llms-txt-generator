@@ -3,7 +3,7 @@ Contributors: mohit
 Tags: llms, ai, context, txt
 Requires at least: 6.0
 Tested up to: 6.4
-Stable tag: 1.0.0
+Stable tag: 1.1.0
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -46,6 +46,13 @@ description: A collection of vegan recipes and cooking tips.
 *   **Instant Setup**: Activates and works immediately.
 *   **Live Preview**: Link to view your live file directly from the settings page.
 *   **Zero Bloat**: No CSS or JS loads on your frontend. The logic only runs when the specific `/llms.txt` URL is requested.
+*   **Security First**: Hardened sanitization, optional header controls, and safe output defaults to keep your instructions clean.
+
+### Developer Hooks
+*   `llms_txt_content_max_length` — adjust the maximum allowed characters before truncation.
+*   `llms_txt_remove_x_robots_tag` — decide whether to keep or remove the `X-Robots-Tag` header for `/llms.txt`.
+*   `llms_txt_additional_headers` — supply an associative array of extra headers to send with the response.
+*   `llms_txt_content` — filter the stored content before it is output (still sanitized before render).
 
 == Installation ==
 
@@ -72,6 +79,11 @@ Try re-saving your Permalinks structure under **Settings > Permalinks**. This fl
 
 == Changelog ==
 
+= 1.1.0 =
+*   Hardened sanitization: UTF-8 validation, control character stripping, length limiting with warnings, and textarea-safe normalization.
+*   Added `X-Content-Type-Options: nosniff` plus filters for managing X-Robots-Tag and additional headers on `/llms.txt`.
+*   Defense-in-depth: output now runs through a final sanitizer to ensure plain-text safety.
+
 = 1.0.0 =
 *   Initial release.
 *   Added admin settings page.
@@ -80,5 +92,10 @@ Try re-saving your Permalinks structure under **Settings > Permalinks**. This fl
 
 == Upgrade Notice ==
 
-= 1.0.0 =
-Initial MVP release. If you find the endpoint not working after an update, please visit the settings page to ensure rules are flushed.
+= 1.1.0 =
+Security hardening and header controls added. Review your llms.txt content after updating in case it was truncated to the new safe length.
+
+== Development ==
+
+*   Run unit checks: `composer test` (uses a lightweight built-in harness).
+*   Create a distributable zip: `npm run build:zip` (outputs to `dist/simple-llms-txt.zip`).

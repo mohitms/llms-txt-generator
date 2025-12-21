@@ -3,7 +3,8 @@
     "version": "1.0.0",
     "description": "Simple LLMS.txt Manager for WordPress",
     "scripts": {
-        "test:e2e": "playwright test"
+        "test:e2e": "playwright test",
+        "build:zip": "bash scripts/build-zip.sh"
     },
     "devDependencies": {
         "@playwright/test": "^1.40.0",
