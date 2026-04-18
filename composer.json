@@ -5,7 +5,7 @@
     "require-dev": {
         "brain/monkey": "^2.6",
         "php-stubs/wordpress-stubs": "^6.0",
-        "phpunit/phpunit": "^9.6"
+        "phpunit/phpunit": "^12.5"
     },
     "license": "GPL-2.0-or-later",
     "authors": [
